@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
+import { ScrollArrow } from "@/components/ui/ScrollArrow";
 import { CLINIC, REVIEW_SUMMARY } from "@/lib/constants";
 
 const playfair = localFont({
@@ -134,7 +135,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <SmoothScroll>{children}</SmoothScroll>
+        <SmoothScroll>
+          {children}
+          <ScrollArrow />
+        </SmoothScroll>
       </body>
     </html>
   );
